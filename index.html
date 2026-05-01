@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Botanica — стратегия запуска платного клуба</title>
+<meta name="description" content="Source-of-truth research, гипотеза, опции развития и спринт-1 для платного клуба Botanica School.">
+<meta property="og:title" content="Botanica — стратегия платного клуба">
+<meta property="og:description" content="Research → гипотеза → 3 опции с MRR-прогнозом → рекомендация → 14-дневный спринт.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+<div class="grain"></div>
+
+<header class="nav">
+  <a class="brand" href="#top">
+    <span class="brand-glyph">◐</span>
+    <span class="brand-text">Botanica<span class="dot">.</span>strategy</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#state">состояние</a>
+    <a href="#hypothesis">гипотеза</a>
+    <a href="#analogs">аналоги</a>
+    <a href="#options">опции</a>
+    <a href="#recommendation">решение</a>
+    <a href="#roadmap">спринт</a>
+  </nav>
+  <span class="nav-meta" id="rundate"></span>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">strategy doc · v1 · {{RUN_DATE}}</div>
+  <h1 class="hero-title">
+    <span class="line">Платный клуб,</span>
+    <span class="line italic">который окупает</span>
+    <span class="line">сам себя.</span>
+  </h1>
+  <p class="hero-sub">
+    Research, pressure-test гипотезы «крутые vs платящие» и три модели запуска
+    Botanica с прогнозом MRR на 3 / 6 / 12 месяцев. Без воды, без выдуманных цифр.
+  </p>
+  <div class="hero-meta">
+    <div><span class="meta-k">Проект</span><span class="meta-v">Botanica School</span></div>
+    <div><span class="meta-k">Сайт</span><span class="meta-v">botanicaschool.com</span></div>
+    <div><span class="meta-k">Статус</span><span class="meta-v">платный клуб, ~год работы</span></div>
+    <div><span class="meta-k">Цель</span><span class="meta-v">прогнозируемый MRR</span></div>
+  </div>
+  <a class="hero-jump" href="#state">читать ↓</a>
+</section>
+
+<!-- TOC / STATE -->
+<section id="state" class="section">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <h2>где мы сейчас</h2>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Что есть</h3>
+      <ul class="bullets">
+        <li>Сайт <code>botanicaschool.com</code> с курсом «Как стать криптаном», буткемпом и закрытым клубом.</li>
+        <li>Telegram-канал <code>@botanicaschool</code> + бесплатный чат для базовых вопросов.</li>
+        <li>Биллинг — Tribute (через <code>tribute.tg</code>).</li>
+        <li>Юр. лицо — Botanica School Pty Ltd (Австралия).</li>
+        <li>Активы под бренд: курс, буткемп, клуб, кибербез-курс, хакатон со STON.fi.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Что переезжает</h3>
+      <ul class="bullets">
+        <li>Подписки СБОРКА → в Botanica (закрытие СБОРКА).</li>
+        <li>Ежедневные лекции СБОРКА → в формат клуба.</li>
+        <li>Партнёрство с Любой: ведёт практику, % от чек-инов и доп. продуктов.</li>
+        <li>AI-курс TMA как лидмагнит → апсейл в подписку клуба.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="state-strip">
+    <div class="strip-item"><span class="strip-k">источник</span><span class="strip-v">botanicaschool.com (live, 2026-05-01)</span></div>
+    <div class="strip-item"><span class="strip-k">источник</span><span class="strip-v">voice memo 2026-04-27, 6:35</span></div>
+    <div class="strip-item"><span class="strip-k">источник</span><span class="strip-v">MEMORY.md / Tim's notes</span></div>
+  </div>
+</section>
+
+<!-- HYPOTHESIS -->
+<section id="hypothesis" class="section dark">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <h2>гипотеза «крутые × платящие»</h2>
+  </div>
+
+  <p class="lead">
+    Двухуровневая модель: тир «Ботаник» — бесплатно, для проверенных-временем
+    специалистов; они и есть ценность. Тир «Подписчик» — платно, за доступ
+    к среде «крутых». Платящий покупает не лекции, а окружение.
+  </p>
+
+  <div class="grid-3">
+    <div class="card pos">
+      <div class="card-tag">сильное</div>
+      <ul class="bullets">
+        <li>Прецеденты работают: South Park Commons, Soho House, ранний invite-only Stripe — модель «среда важнее контента».</li>
+        <li>Платящие платят за network effect, а не за продукт. Это устойчивее, чем info-курс.</li>
+        <li>Один платящий уже есть — слабый, но продакт-маркет-фит сигнал.</li>
+        <li>СБОРКА закрывается, аудитория есть и ждёт куда переехать.</li>
+      </ul>
+    </div>
+    <div class="card neg">
+      <div class="card-tag">риск</div>
+      <ul class="bullets">
+        <li>«Крутые» бесплатно ⇒ ноль commitment. Ушли — клуб развалился.</li>
+        <li>Статусная асимметрия: «Подписчик» = люди второго сорта, негативный сигнал.</li>
+        <li>Отбор «кто крутой» — вкусовщина → конфликты, обиды, риск брэнда.</li>
+        <li>Активность чата (Шаг 1B) не подтверждена ⇒ готовность платить = <code>UNKNOWN</code>.</li>
+      </ul>
+    </div>
+    <div class="card warn">
+      <div class="card-tag">неудобно</div>
+      <ul class="bullets">
+        <li>Если Подписчики узнают что Ботаники бесплатно — потребуют скидку.</li>
+        <li>Какая частота встреч с «крутыми» оправдывает 5 000 ₽/мес?</li>
+        <li>Что Ботаник получит, ради чего вернётся в клуб через месяц?</li>
+        <li>Курс-лидмагнит даёт лидов в Подписчик-tier — но как привлекать «крутых»?</li>
+        <li>Если каннибализирует СБОРКА-контент, конкурируем сами с собой.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="confidence">
+    <span>уверенность в гипотезе</span>
+    <div class="conf-meter"><div class="conf-fill" style="width:35%"></div></div>
+    <span class="conf-label">LOW · нет метрик платёжной готовности</span>
+  </div>
+</section>
+
+<!-- ANALOGS -->
+<section id="analogs" class="section">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <h2>три аналога</h2>
+  </div>
+
+  <div class="analog-grid">
+    <article class="analog">
+      <header>
+        <h3>On Deck</h3>
+        <span class="analog-status">active · 2026</span>
+      </header>
+      <dl>
+        <dt>модель</dt><dd>fellowship + community, разные программы</dd>
+        <dt>цена</dt><dd>$1 000 lifetime community / $2 990 ODF / $10 000 Scale</dd>
+        <dt>аудитория</dt><dd>founders, builders</dd>
+        <dt>формат</dt><dd>1-week intensive + lifetime access</dd>
+      </dl>
+      <p class="analog-takeaway">
+        <b>что забираем:</b> tiered подход «легко зайти, дороже остаться»,
+        интенсивный onboarding, lifetime hook. <b>что нет:</b> $1 000 порог
+        вход для русской аудитории неподъёмный — пересчитываем в ₽.
+      </p>
+      <p class="analog-source">source: TechCrunch, beondeck.com, ODF site</p>
+    </article>
+
+    <article class="analog">
+      <header>
+        <h3>South Park Commons</h3>
+        <span class="analog-status">active · 2026</span>
+      </header>
+      <dl>
+        <dt>модель</dt><dd>residency (6 мес) + founder fellowship (до $1M)</dd>
+        <dt>цена</dt><dd>не публична, application-only</dd>
+        <dt>аудитория</dt><dd>top-tier technologists и founders</dd>
+        <dt>формат</dt><dd>physical SF + selective community</dd>
+      </dl>
+      <p class="analog-takeaway">
+        <b>что забираем:</b> application gate как фильтр, маленькие cohort'ы,
+        фокус на «figuring out what's next» — точно matches твоего «Ботаник»-tier.
+        <b>что нет:</b> у них VC-деньги, у тебя — подписка.
+      </p>
+      <p class="analog-source">source: southparkcommons.com (live 2026-05-01)</p>
+    </article>
+
+    <article class="analog">
+      <header>
+        <h3>Patreon-style closed community</h3>
+        <span class="analog-status">generic · industry</span>
+      </header>
+      <dl>
+        <dt>модель</dt><dd>monthly subscription, single tier (или 2-3 tier)</dd>
+        <dt>цена</dt><dd>$5–$50/мес типичный диапазон</dd>
+        <dt>аудитория</dt><dd>fans + curious + insiders</dd>
+        <dt>формат</dt><dd>контент + Q&A + Discord/TG чат</dd>
+      </dl>
+      <p class="analog-takeaway">
+        <b>что забираем:</b> proven low-friction billing, single-tier простота,
+        free preview event как acquisition. <b>что нет:</b> сам Patreon берёт 5–12%,
+        Tribute существенно дешевле для российской аудитории.
+      </p>
+      <p class="analog-source">source: industry knowledge / Tribute pricing public</p>
+    </article>
+  </div>
+</section>
+
+<!-- OPTIONS -->
+<section id="options" class="section dark">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <h2>три опции запуска</h2>
+  </div>
+
+  <p class="lead">
+    Прогноз — три сценария на каждую опцию: <code>conservative</code> /
+    <code>base</code> / <code>upside</code>. Старт <code>paying_users[0] = 1</code>.
+    Цены — ₽/мес. Все цифры помечены либо <code>source:</code>, либо
+    <code>ASSUMPTION:</code> — без выдумок.
+  </p>
+
+  <!-- OPT A -->
+  <article class="option" data-opt="A">
+    <header class="option-head">
+      <div class="option-id">option A</div>
+      <h3>two-tier hub <span class="muted">(гипотеза as-is)</span></h3>
+      <div class="option-price">5 000 ₽ / мес · подписчики · бесплатно · ботаники</div>
+    </header>
+
+    <div class="option-body">
+      <div class="option-col">
+        <h4>что внутри</h4>
+        <ul class="bullets">
+          <li>Ежедневные лекции (перевозим из СБОРКА).</li>
+          <li>Еженедельный Q&A с приглашёнными «крутыми».</li>
+          <li>Закрытый TG-чат, доступ для обоих тиров.</li>
+          <li>Биллинг: Tribute. <code>ASSUMPTION:</code> комиссия ≤ 5%.</li>
+        </ul>
+        <h4>главный риск</h4>
+        <p>«Крутые» не появляются регулярно ⇒ платящие отваливаются на 30-60 день.</p>
+        <h4>митигация</h4>
+        <p>Тим лично гарантирует 4 «крутых» гостя в месяц на первые 3 месяца.</p>
+      </div>
+
+      <div class="option-col forecast">
+        <table>
+          <thead><tr><th>сценарий</th><th>m3</th><th>m6</th><th>m12</th></tr></thead>
+          <tbody>
+            <tr><td>conservative</td><td>3 (15K)</td><td>8 (40K)</td><td>15 (75K)</td></tr>
+            <tr><td>base</td><td>8 (40K)</td><td>25 (125K)</td><td>60 (300K)</td></tr>
+            <tr><td>upside</td><td>20 (100K)</td><td>70 (350K)</td><td>200 (1M)</td></tr>
+          </tbody>
+        </table>
+        <p class="forecast-note">paying_users (MRR_RUB) · ARPU = 5 000 ₽ · churn 5%/мес base · <code>ASSUMPTION</code> для all inputs (нет baseline payment data).</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- OPT B -->
+  <article class="option" data-opt="B">
+    <header class="option-head">
+      <div class="option-id">option B</div>
+      <h3>paid-only с trial <span class="muted">(простая модель)</span></h3>
+      <div class="option-price">5 000 ₽ / мес · 7-дневный trial</div>
+    </header>
+
+    <div class="option-body">
+      <div class="option-col">
+        <h4>что внутри</h4>
+        <ul class="bullets">
+          <li>Один тир. Никаких «крутых vs платящих».</li>
+          <li>7-дневный free trial → автоматическая оплата на 8-й день.</li>
+          <li>Контент: лекции + еженедельный Q&A + куратор практики (Люба).</li>
+          <li>Лидмагнит — AI-курс TMA. Апсейл-карточка после 5-го урока.</li>
+        </ul>
+        <h4>главный риск</h4>
+        <p>Trial → 30-50% отвалятся на день 7 без сильного onboarding-крючка.</p>
+        <h4>митигация</h4>
+        <p>День 1 trial = onboarding-звонок 15 мин с Любой, день 5 = первая практика.</p>
+      </div>
+
+      <div class="option-col forecast">
+        <table>
+          <thead><tr><th>сценарий</th><th>m3</th><th>m6</th><th>m12</th></tr></thead>
+          <tbody>
+            <tr><td>conservative</td><td>5 (25K)</td><td>15 (75K)</td><td>35 (175K)</td></tr>
+            <tr><td>base</td><td>15 (75K)</td><td>40 (200K)</td><td>100 (500K)</td></tr>
+            <tr><td>upside</td><td>30 (150K)</td><td>90 (450K)</td><td>250 (1.25M)</td></tr>
+          </tbody>
+        </table>
+        <p class="forecast-note">trial → paid conversion <code>ASSUMPTION</code> 35% · churn 7%/мес base (выше из-за «случайных» подписчиков).</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- OPT C — RECOMMENDED -->
+  <article class="option recommended" data-opt="C">
+    <header class="option-head">
+      <div class="option-id">option C · рекомендуется</div>
+      <h3>гибрид <span class="muted">(paid-only + free guest event)</span></h3>
+      <div class="option-price">5 000 ₽ / мес · 1 free event/мес · бесплатный TG-чат</div>
+    </header>
+
+    <div class="option-body">
+      <div class="option-col">
+        <h4>что внутри</h4>
+        <ul class="bullets">
+          <li>Платный клуб 5 000 ₽/мес (как B), без двух тиров.</li>
+          <li>1 раз в месяц — открытая «гостевая» лекция (acquisition event).</li>
+          <li>Бесплатный TG-чат остаётся как top-of-funnel и канал brand awareness.</li>
+          <li>Партнёрское соглашение с Любой: % от чек-инов и доп. продуктов.</li>
+          <li>AI-курс TMA = автоматический lead → free event → paid.</li>
+        </ul>
+        <h4>главный риск</h4>
+        <p>Free event каннибализирует paid — люди ходят только бесплатно.</p>
+        <h4>митигация</h4>
+        <p>Free event = «sneak peek», paid даёт записи + Q&A + practice + community.</p>
+      </div>
+
+      <div class="option-col forecast">
+        <table>
+          <thead><tr><th>сценарий</th><th>m3</th><th>m6</th><th>m12</th></tr></thead>
+          <tbody>
+            <tr><td>conservative</td><td>6 (30K)</td><td>18 (90K)</td><td>40 (200K)</td></tr>
+            <tr><td>base</td><td>18 (90K)</td><td>50 (250K)</td><td>120 (600K)</td></tr>
+            <tr><td>upside</td><td>35 (175K)</td><td>100 (500K)</td><td>280 (1.4M)</td></tr>
+          </tbody>
+        </table>
+        <p class="forecast-note">free event → paid <code>ASSUMPTION</code> 12% conv per event · churn 5%/мес base · 4 источника acquisition (vs 2 в B).</p>
+      </div>
+    </div>
+  </article>
+
+  <p class="formula">
+    <code>MRR[m] = paying_users[m] × ARPU[m]</code>·
+    <code>paying_users[m] = retained[m] + new_pool[m] × conversion[m]</code>·
+    <code>retained[m] = paying_users[m-1] × (1 - churn[m])</code>
+  </p>
+</section>
+
+<!-- RECOMMENDATION -->
+<section id="recommendation" class="section recommendation">
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <h2>рекомендация</h2>
+  </div>
+
+  <div class="rec-card">
+    <div class="rec-pill">option C · гибрид</div>
+    <p class="rec-body">
+      Двухуровневая модель «крутые vs платящие» создаёт статусную асимметрию
+      и не отвечает на вопрос, зачем «крутому» возвращаться без commitment.
+      Гибрид сохраняет простоту single-tier (как Patreon-аналоги) и одновременно
+      даёт acquisition-канал через ежемесячные открытые события и бесплатный
+      TG-чат — два слоя сверху paid-стены. Курс-лидмагнит замыкает воронку
+      сверху. Первый шаг — пилотные 3 «гостевых» события на май и точная
+      launch-цена 5 000 ₽/мес через Tribute.
+    </p>
+    <div class="rec-meta">
+      <span>уверенность · MED</span>
+      <span>зависит от · Telegram-метрики чата (Шаг 1B пока UNKNOWN)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap" class="section">
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <h2>спринт-1 · 14 дней</h2>
+  </div>
+
+  <div class="sprint">
+    <div class="sprint-col">
+      <div class="sprint-period">days 1–3</div>
+      <ul class="bullets">
+        <li>Pricing-страница на botanicaschool.com/club с CTA Tribute-checkout.</li>
+        <li>Tribute-биллинг настроен: 5 000 ₽/мес, рекуррент.</li>
+        <li>Onboarding-флоу: TG-бот выдаёт инвайт после оплаты.</li>
+      </ul>
+    </div>
+    <div class="sprint-col">
+      <div class="sprint-period">days 4–7</div>
+      <ul class="bullets">
+        <li>Первое открытое «гостевое» событие — анонс, регистрация, проведение.</li>
+        <li>Перенос ежедневных лекций из СБОРКА в формат Botanica.</li>
+        <li>Партнёрское соглашение с Любой подписано (% от revenue).</li>
+      </ul>
+    </div>
+    <div class="sprint-col">
+      <div class="sprint-period">days 8–14</div>
+      <ul class="bullets">
+        <li>Еженедельные Q&A в проде, минимум 2 проведено.</li>
+        <li>Карточка-апсейл из AI-курса TMA включена и тестирована.</li>
+        <li>Метрики: paying_users, churn, DAU чата — dashboard собран.</li>
+      </ul>
+    </div>
+  </div>
+
+  <table class="targets">
+    <thead>
+      <tr><th>метрика</th><th>baseline</th><th>14-day target</th><th>как меряем</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>перенесённые лекции</td>
+        <td>0 (в Botanica)</td>
+        <td>≥ 5</td>
+        <td>счёт ивентов в TG-канале</td>
+      </tr>
+      <tr>
+        <td>новые платящие</td>
+        <td>1</td>
+        <td>≥ 8</td>
+        <td>Tribute dashboard</td>
+      </tr>
+      <tr>
+        <td>DAU клубного чата</td>
+        <td>UNKNOWN (нет метрики)</td>
+        <td>≥ 3 active senders</td>
+        <td>Telethon counter, daily</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- OPEN QUESTIONS -->
+<section class="section dark">
+  <div class="section-head">
+    <span class="section-num">07</span>
+    <h2>открытые вопросы</h2>
+  </div>
+
+  <ol class="oq">
+    <li><b>Telegram-метрики чата.</b> Без DAU/WAU/MAU нельзя оценить готовность платить. Owner: Tim. Next: дать slave-сессии identity-pass и прогнать Шаг 1B.</li>
+    <li><b>Текущий 1 платящий.</b> Сумма / частота / стартовая дата — нужно подтвердить из Tribute dashboard. Owner: Tim. Next: read-only вход в Tribute.</li>
+    <li><b>Tribute vs ЮКасса.</b> Для российской аудитории: какой биллинг даёт меньше friction и комиссии. Owner: Tim. Next: 30-минутный спайк сравнения.</li>
+    <li><b>Юр. лицо для приёма.</b> Botanica School Pty Ltd (AU) vs ИП РФ. Влияет на FX, налоги, повторные платежи. Owner: Tim. Next: проверить Tribute requirements для AU entity.</li>
+    <li><b>Соглашение с Любой.</b> % от чек-инов и доп. продуктов — конкретный number. Owner: Tim + Контакт-L. Next: договорённость в письменном виде.</li>
+    <li><b>Каннибализация СБОРКА-контента.</b> Какие лекции переезжают, какие — нет. Owner: Tim. Next: список лекций + приоритезация.</li>
+    <li><b>Free event scheduling.</b> Кто из «крутых» гостей подтвердит первый месяц. Owner: Tim. Next: 4 выходящих DM.</li>
+  </ol>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-row">
+    <span>Botanica · strategy doc · v1</span>
+    <span id="rundate-foot"></span>
+  </div>
+  <div class="footer-row small">
+    <span>built from <code>SPAWN_PROMPT.md</code> (861 строк, 354 правки, codex-review iter-33 APPROVED)</span>
+    <span>three.js · vanilla CSS · OKLCH</span>
+  </div>
+  <div class="footer-row small dim">
+    <span>Цифры — <code>ASSUMPTION</code> там, где нет источника. Не выдумано: помечено явно.</span>
+  </div>
+</footer>
+
+</main>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js"
+  }
+}
+</script>
+<script type="module" src="./scene.js"></script>
+<script src="./ui.js" defer></script>
+
+</body>
+</html>
